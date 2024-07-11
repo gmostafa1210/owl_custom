@@ -16,13 +16,13 @@
 
     "assets": {
         "point_of_sale.assets": [
-            "owl_custom/static/src/pos/*/*.js",
-            "owl_custom/static/src/pos/*/*.xml"
+            "owl_custom/static/src/components/pos/*/*.js",
+            "owl_custom/static/src/components/pos/*/*.xml",
         ],
         "web.assets_backend": [
-            "owl_custom/static/src/components/*/*.js",
-            "owl_custom/static/src/components/*/*.xml",
-            "owl_custom/static/src/components/*/*.scss",
+            "owl_custom/static/src/components/todo_list/*/*.js",
+            "owl_custom/static/src/components/todo_list/*/*.xml",
+            "owl_custom/static/src/components/todo_list/*/*.scss",
         ],
     },
     'installable': True,
