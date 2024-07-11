@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_todo_list_form" model="ir.ui.view">
+        <field name="name">view.todo.list.form</field>
+        <field name="model">todo.list</field>
+        <field name="arch" type="xml">
+            <form string="To-do List">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" required="1" />
+                            <field name="completed" />
+                            <field name="color" widget="color" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_todo_list_tree" model="ir.ui.view">
+        <field name="name">view.todo.list.tree</field>
+        <field name="model">todo.list</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" readonly="1" />
+                <field name="completed" />
+                <field name="color" widget="color" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_todo_list" model="ir.actions.act_window">
+        <field name="name">To-do List</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">todo.list</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" eval="False"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                To-do List
+            </p><p>
+                Create a new To-do List.
+            </p>
+        </field>
+    </record>
+
+    <record id="action_todo_list_js" model="ir.actions.client">
+        <field name="name">To-do List JS</field>
+        <field name="tag">owl_custom.TodoList</field>
+    </record>
+
+    <menuitem id="parent_menu_action_todo_list" sequence="1" name="To-do List"/>
+
+    <menuitem
+        id="menu_action_todo_list"
+        parent="parent_menu_action_todo_list"
+        action="action_todo_list"
+        name="To-do List"/>
+    <menuitem
+        id="menu_action_todo_list_js"
+        parent="parent_menu_action_todo_list"
+        action="action_todo_list_js"
+        name="To-do List JS"/>
+
+
+</odoo>
